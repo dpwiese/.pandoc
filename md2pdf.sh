@@ -4,7 +4,7 @@ sed 's/ {linenos=false}&nbsp;//g' "$1" > temp.md; \
 pandoc temp.md \
     --from markdown+yaml_metadata_block \
     --include-in-header ~/.pandoc/headings.tex \
-    --include-in-header ~/.pandoc/inline-code.tex \
+    --include-in-header ~/.pandoc/listings-code.tex \
     --include-in-header ~/.pandoc/link-color.tex \
     -V urlcolor=cyan \
     -V linkcolor:blue \
