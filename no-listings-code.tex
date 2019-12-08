@@ -1,12 +1,33 @@
 \definecolor{inline-background}{RGB}{244,244,245}
 
+% textttt fontsize and background color for inline code
 \let\oldtexttt\texttt
 \renewcommand{\texttt}[1]{
   \colorbox{inline-background}{\fontsize{8pt}{8pt}\oldtexttt{#1}}
 }
 
+% fvextra (fancyvrb extension) package options for block code
 \fvset{
-  numbers=left,
+  fontsize        = 10pt,
+  fontshape       = auto,
+  fontseries      = auto,
+  numbers         = left,
+  xleftmargin     = 2em,
+  xrightmargin    = 1cm,
+  frame           = single,
+  framesep        = 1mm,
+  framerule       = 0.01em,
+  rulecolor       = \color{black},
+  fillcolor       = \color{inline-background},
+  numbersep       = 3pt,
+  firstnumber     = auto,
+  stepnumber      = 1,
+  showspaces      = false,
+  showtabs        = false,
+  tabsize         = 4,
+  samepage        = true,
+  highlightlines  = 1-99,
+  highlightcolor  = inline-background,
 }
 
 %         \expandafter\lsthk@EndGroup\iftoggle{@InInlineListing}{\eh{}}{}%
