@@ -1,0 +1,111 @@
+\usepackage{fancyvrb,newverbs,xcolor,listings,xpatch,etoolbox,atbegshi,ifthen,listings,tikz}
+
+\definecolor{inline-background}{RGB}{244,244,245}
+\definecolor{inline-text}{HTML}{24292E}
+
+\newfontfamily\menloregular{Menlo Regular}
+
+\makeatletter
+\newtoggle{@InInlineListing}%
+\togglefalse{@InInlineListing}%
+
+\renewcommand\lstinline[1][]{%
+    \leavevmode\bgroup\toggletrue{@InInlineListing}\bh%
+      \def\lst@boxpos{b}%
+      \lsthk@PreSet\lstset{
+        basicstyle        = \color{inline-text}\small\menloregular,
+        frameround        = tttt,
+        keywordstyle      = \color{inline-text}\small\menloregular,
+        keywordstyle      = \color{inline-text}\small\menloregular,
+        keywordstyle      = {[2]\color{inline-text}\small\menloregular},
+        keywordstyle      = {[3]\color{inline-text}\small\menloregular},
+        sensitive         = true,
+        identifierstyle   = \color{inline-text}\small\menloregular,
+        commentstyle      = \color{inline-text}\small\menloregular,
+        stringstyle       = \color{inline-text}\small\menloregular,
+        emph              = \color{inline-text}\small\menloregular,
+        emphstyle         = \color{inline-text}\small\menloregular,
+        moredelim         = **[is][\color{inline-text}\small\menloregular]{@}{@},
+        framexleftmargin  = 10pt,
+        framextopmargin   = 10pt,
+        framexbottommargin= 7pt,
+        xleftmargin       = 22pt,
+        framesep          = 10pt,
+        flexiblecolumns,
+        #1}%
+      \lsthk@TextStyle
+      \@ifnextchar\bgroup{\afterassignment\lst@InlineG \let\@let@token}%
+                         \lstinline@}%
+
+\def\lst@LeaveAllModes{%
+    \ifnum\lst@mode=\lst@nomode
+        \expandafter\lsthk@EndGroup\iftoggle{@InInlineListing}{\eh{}}{}%
+    \else
+        \expandafter\egroup\expandafter\lst@LeaveAllModes
+    \fi%
+    }
+\makeatother
+
+\tikzstyle{highlighter} = [
+  inline-background,
+  line width = \baselineskip
+]
+
+\makeatletter
+
+\newcounter{highlight}
+\newif\ifhl@active
+
+\newcommand{\tikzhighlightanchor}[1]{%
+    \ensuremath{\vcenter{\hbox{%
+        \tikz[remember picture, overlay]{\coordinate (#1 highlight \arabic{highlight});}%
+    }}}%
+}
+
+\newcommand{\bh}{%
+    \stepcounter{highlight}%
+    \edef\hl@temp{%
+        \unexpanded{\noexpand\expandafter\gdef\noexpand\csname}%
+        hl@p@\arabic{highlight}%
+        \unexpanded{\noexpand\endcsname{\arabic{page}}}
+    }%
+    \expandafter\write\expandafter\@auxout\expandafter{\hl@temp}%
+    \tikzhighlightanchor{begin}%
+}
+\newcommand{\eh}{%
+    \tikzhighlightanchor{end}%
+}
+\newcommand{\hlstyle}{%
+    \global\hl@activetrue
+    \bh
+    \aftergroup\hlstyleend
+}
+\newcommand{\hlstyleend}{%
+    \eh
+    \global\hl@activefalse
+}
+
+\AtBeginShipout{\AtBeginShipoutUpperLeft{%
+    \ifthenelse{\value{highlight} > 0}{%
+        \tikz[remember picture, overlay]{\foreach \stroke in {1,...,\arabic{highlight}} {%
+            \ifcsname hl@p@\stroke\endcsname
+                \ifthenelse{\csname hl@p@\stroke\endcsname=\arabic{page}}{\draw[highlighter]
+                    (begin highlight \stroke) -- (end highlight \stroke);}{}%
+            \fi
+        }}%
+    }{}%
+}}
+
+\let\orig@lst@discretionary=\lst@discretionary
+\gdef\lst@discretionary{%
+    \ifhl@active \eh \fi
+    \orig@lst@discretionary
+    \ifhl@active \bh \fi
+}
+
+\makeatother
+
+\lstset{
+  breaklines,
+  breakatwhitespace,
+}
