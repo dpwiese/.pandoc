@@ -1,3 +1,5 @@
+% Use this Latex header with the pandoc option --listings
+
 \usepackage{fancyvrb,newverbs,xcolor,listings,xpatch,etoolbox,atbegshi,ifthen,listings,tikz}
 
 \definecolor{inline-background}{RGB}{244,244,245}
@@ -20,6 +22,7 @@
         keywordstyle      = {[2]\color{inline-text}\small\menloregular},
         keywordstyle      = {[3]\color{inline-text}\small\menloregular},
         sensitive         = true,
+        keepspaces        = true,
         identifierstyle   = \color{inline-text}\small\menloregular,
         commentstyle      = \color{inline-text}\small\menloregular,
         stringstyle       = \color{inline-text}\small\menloregular,
