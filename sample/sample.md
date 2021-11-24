@@ -4,7 +4,6 @@ date: "November 2019"
 author: "Daniel Wiese"
 subject: "Sample Notes"
 keywords: [Markdown, Pandoc, Example]
-lang: "en"
 ---
 
 # Top Level Heading
