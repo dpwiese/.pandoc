@@ -7,7 +7,7 @@ sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
   --include-in-header ~/.pandoc/tex-headers/link-color.tex \
   -V urlcolor=cyan \
   -V linkcolor:blue \
-  -V geometry:letter \
+  -V geometry:letterpaper \
   -V geometry:margin=1in \
   -V mainfont="SFNS Display" \
   -V monofont="Menlo Regular" \
