@@ -15,4 +15,7 @@ sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
   --lua-filter ~/.pandoc/filters/lua-links.lua \
   --template eisvogel \
   --pdf-engine=xelatex \
-  -o "$2"
+  --bibliography="$2" \
+  --csl ieee-with-url.csl \
+  --citeproc \
+  -o "$3"
