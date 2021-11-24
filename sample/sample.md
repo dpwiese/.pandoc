@@ -24,21 +24,22 @@ $ pandoc sample.md \
     --include-in-header ~/.pandoc/tex-headers/toc-safe-headings.tex \
     --include-in-header ~/.pandoc/tex-headers/no-listings-code.tex \
     --include-in-header ~/.pandoc/tex-headers/link-color.tex \
-    --filter pandoc-citeproc \
-    --bibliography=sample.bib \
-    --csl ieee.csl \
-    --template eisvogel \
+    -V urlcolor=cyan \
+    -V linkcolor:blue \
+    -V geometry:letterpaper \
+    -V geometry:margin=1in \
     -V mainfont="SFNS Display" \
     -V monofont="Menlo Regular" \
     -V sansfont="Helvetica" \
-    -V urlcolor=cyan \
     -V fontsize=10pt \
-    -V geometry:letter \
-    -V geometry:margin=1in \
-    --number-sections \
-    --lua-filter ~/.pandoc/filters/lua-links.lua \
+    --lua-filter ~/.pandoc/filters/lua-filter.lua \
+    --template eisvogel \
     --pdf-engine=xelatex \
     --toc \
+    --number-sections \
+    --bibliography=sample.bib \
+    --csl ieee-with-url.csl \
+    --citeproc \
     -o sample.pdf
 ```
 

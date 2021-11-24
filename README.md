@@ -19,5 +19,5 @@ Updated to Pandoc [`2.16.2`](https://pandoc.org/releases.html#pandoc-2.16.2-2021
 Current usage:
 
 ```
-~/.pandoc/md2pdf.sh input.md input.bib out.pdf
+~/.pandoc/md2pdf.sh sample.md sample.bib sample.pdf
 ```

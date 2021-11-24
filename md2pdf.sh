@@ -11,10 +11,13 @@ sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
   -V geometry:margin=1in \
   -V mainfont="SFNS Display" \
   -V monofont="Menlo Regular" \
+  -V sansfont="Helvetica" \
   -V fontsize=10pt \
   --lua-filter ~/.pandoc/filters/lua-filter.lua \
   --template eisvogel \
   --pdf-engine=xelatex \
+  --toc \
+  --number-sections \
   --bibliography="$2" \
   --csl ieee-with-url.csl \
   --citeproc \
