@@ -9,7 +9,7 @@ sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
   -V linkcolor:blue \
   -V geometry:letter \
   -V geometry:margin=1in \
-  -V mainfont="SFNS Display" \
+  -V mainfont="SF Pro" \
   -V monofont="Menlo Regular" \
   -V fontsize=10pt \
   --lua-filter ~/.pandoc/filters/lua-links.lua \
