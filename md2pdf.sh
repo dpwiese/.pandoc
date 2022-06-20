@@ -7,6 +7,7 @@ sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
   --include-in-header ~/.pandoc/tex-headers/no-listings-code.tex \
   --include-in-header ~/.pandoc/tex-headers/link-color.tex \
   --include-in-header ~/.pandoc/tex-headers/center-captions.tex \
+  --include-in-header ~/.pandoc/tex-headers/set-label-items.tex \
   -V urlcolor=cyan \
   -V linkcolor:blue \
   -V geometry:margin=1in \
