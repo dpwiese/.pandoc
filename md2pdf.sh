@@ -2,6 +2,7 @@
 
 sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
   --from markdown-markdown_in_html_blocks \
+  --include-in-header ~/.pandoc/tex-headers/set-font.tex \
   --include-in-header ~/.pandoc/tex-headers/headings.tex \
   --include-in-header ~/.pandoc/tex-headers/no-listings-code.tex \
   --include-in-header ~/.pandoc/tex-headers/link-color.tex \
