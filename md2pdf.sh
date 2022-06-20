@@ -12,6 +12,7 @@ sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
   -V monofont="Menlo Regular" \
   -V fontsize=10pt \
   --lua-filter ~/.pandoc/filters/lua-links.lua \
+  --lua-filter ~/.pandoc/filters/lua-filter.lua \
   --template eisvogel \
   --pdf-engine=xelatex \
   -o "$2"
