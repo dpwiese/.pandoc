@@ -22,6 +22,20 @@ The Pandoc data files that are included are [Citation Style Language](https://ci
 
 Read the [Pandoc docs](https://pandoc.org/MANUAL.html) to learn more about Pandoc.
 
+## Installing
+
+### Fonts
+
+The Stackexchange post [How to set a font family with pandoc?](https://tex.stackexchange.com/questions/234786/how-to-set-a-font-family-with-pandoc) was a helpful resource.
+
+```sh
+# Install fontconfig
+brew install fontconfig
+
+# List available fonts
+fc-list | grep "SF-Pro-Text-Regular"
+```
+
 ## Version
 
 At the time of writing, the command `pandoc --version` produces the following output:
