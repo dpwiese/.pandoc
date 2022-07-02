@@ -9,6 +9,11 @@
 \newfontfamily\sfprodisplaybold{SF Pro Display Bold}
 \newfontfamily\sfprodisplayregularitalic{SF Pro Display Regular Italic}
 
+% Set font of table of contents text
+\usepackage[titles]{tocloft}
+\renewcommand\cftsecfont{\normalfont}
+\renewcommand\cftsecpagefont{\normalfont}
+
 \makeatletter
   \renewcommand\section{\@startsection {section}{1}{\z@}%
   {-3.5ex \@plus -1ex \@minus -0.2ex}%
