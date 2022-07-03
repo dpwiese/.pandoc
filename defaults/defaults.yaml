@@ -30,4 +30,3 @@ variables:
     - BoldFont=* Display Regular
     - ItalicFont=* Display Regular Italic
     - BoldItalicFont=* Bold Italic
-  monofont: Menlo Regular
