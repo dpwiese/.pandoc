@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Any options here supercede what is specified in the YAML header
-#  of the passed markdown.
+# To use:
+# ~/.pandoc/md2pdf-lite.sh <file_path>/defaults.yaml <in>.md <out>.pdf
 
-sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
-  --defaults defaults.yaml \
-  -o "$2"
+sed 's/ {linenos=false}&nbsp;//g' "$2" | pandoc \
+  --defaults "$1" \
+  -o "$3"
