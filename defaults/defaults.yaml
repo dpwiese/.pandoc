@@ -1,19 +1,19 @@
 pdf-engine: xelatex
 from: markdown-markdown_in_html_blocks
 filters:
-  - lua-links.lua
   - lua-filter.lua
   - parse-html.lua
 template: eisvogel
 top-level-division: section
 toc: true
 toc-depth: 1
+resource-path: ['/Users/dpwiese/.pandoc/tex-headers']
 include-in-header:
-  - /Users/dpwiese/.pandoc/tex-headers/more-headings.tex
-  - /Users/dpwiese/.pandoc/tex-headers/no-listings-code.tex
-  - /Users/dpwiese/.pandoc/tex-headers/link-color.tex
-  - /Users/dpwiese/.pandoc/tex-headers/center-captions.tex
-  - /Users/dpwiese/.pandoc/tex-headers/set-label-items.tex
+  - more-headings.tex
+  - no-listings-code.tex
+  - link-color.tex
+  - center-captions.tex
+  - set-label-items.tex
 variables:
   geometry:
     - margin=1in
