@@ -1,19 +1,19 @@
 pdf-engine: xelatex
 from: markdown-markdown_in_html_blocks
 filters:
-- lua-links.lua
-- lua-filter.lua
-- parse-html.lua
+  - lua-links.lua
+  - lua-filter.lua
+  - parse-html.lua
 template: eisvogel
 top-level-division: section
 toc: true
 toc-depth: 1
 include-in-header:
-- /Users/dpwiese/.pandoc/tex-headers/more-headings.tex
-- /Users/dpwiese/.pandoc/tex-headers/no-listings-code.tex
-- /Users/dpwiese/.pandoc/tex-headers/link-color.tex
-- /Users/dpwiese/.pandoc/tex-headers/center-captions.tex
-- /Users/dpwiese/.pandoc/tex-headers/set-label-items.tex
+  - /Users/dpwiese/.pandoc/tex-headers/more-headings.tex
+  - /Users/dpwiese/.pandoc/tex-headers/no-listings-code.tex
+  - /Users/dpwiese/.pandoc/tex-headers/link-color.tex
+  - /Users/dpwiese/.pandoc/tex-headers/center-captions.tex
+  - /Users/dpwiese/.pandoc/tex-headers/set-label-items.tex
 variables:
   geometry:
     - margin=1in
@@ -26,8 +26,8 @@ variables:
   mainfont: SF Pro
   monofont: Menlo Regular
   mainfontoptions:
-  - UprightFont=*
-  - BoldFont=* Display Regular
-  - ItalicFont=* Display Regular Italic
-  - BoldItalicFont=* Bold Italic
+    - UprightFont=*
+    - BoldFont=* Display Regular
+    - ItalicFont=* Display Regular Italic
+    - BoldItalicFont=* Bold Italic
   monofont: Menlo Regular
