@@ -29,4 +29,4 @@ variables:
     - UprightFont=*
     - BoldFont=* Display Bold
     - ItalicFont=* Display Regular Italic
-    - BoldItalicFont=* Bold Italic
+    - BoldItalicFont=* Display Bold Italic
