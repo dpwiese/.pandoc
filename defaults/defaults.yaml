@@ -27,6 +27,6 @@ variables:
   monofont: Menlo Regular
   mainfontoptions:
     - UprightFont=*
-    - BoldFont=* Display Regular
+    - BoldFont=* Display Bold
     - ItalicFont=* Display Regular Italic
     - BoldItalicFont=* Bold Italic
