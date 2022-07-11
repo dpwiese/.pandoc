@@ -30,3 +30,5 @@ variables:
     - BoldFont=* Display Bold
     - ItalicFont=* Display Regular Italic
     - BoldItalicFont=* Display Bold Italic
+
+# https://github.com/jgm/pandoc/issues/6142
