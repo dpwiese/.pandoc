@@ -14,21 +14,7 @@ include-in-header:
   - link-color.tex
   - center-captions.tex
   - set-label-items.tex
-variables:
-  geometry:
-    - margin=1in
-  urlcolor: "cyan"
-  linkcolor: "blue"
-  fontsize: "10pt"
-  papersize: "letter"
-  numbersections: true
-  secnumdepth: 1
-  mainfont: SF Pro
-  monofont: Menlo Regular
-  mainfontoptions:
-    - UprightFont=*
-    - BoldFont=* Display Bold
-    - ItalicFont=* Display Regular Italic
-    - BoldItalicFont=* Display Bold Italic
+metadata-files:
+  - /Users/dpwiese/.pandoc/defaults/metadata.yaml
 
 # https://github.com/jgm/pandoc/issues/6142
