@@ -1,10 +1,12 @@
 % This latex header creates an environment used by the filter
 % highlight.lua to highlight text using the `==my text==` syntax.
 
-\usepackage{soul}
-\newcommand{\myhighlight}[1]{%
-  \begingroup
-  \sethlcolor{yellow}%
-  \hl{#1}%
-  \endgroup
-}
+% Soul removes trailing quotes
+% https://tex.stackexchange.com/questions/339382/soul-highlight-removes-some-characters-from-text
+
+% Use ulem package
+% https://tex.stackexchange.com/questions/254333/highlighting-text-with-ulem-package
+
+\usepackage[normalem]{ulem}
+\newcommand\myhighlight{\bgroup\markoverwith
+  {\textcolor{yellow}{\rule[-.5ex]{.1pt}{2.5ex}}}\ULon}
