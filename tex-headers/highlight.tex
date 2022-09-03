@@ -1,0 +1,10 @@
+% This latex header creates an environment used by the filter
+% highlight.lua to highlight text using the `==my text==` syntax.
+
+\usepackage{soul}
+\newcommand{\myhighlight}[1]{%
+  \begingroup
+  \sethlcolor{yellow}%
+  \hl{#1}%
+  \endgroup
+}
