@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Any options here supercede what is specified in the YAML header
+#  of the passed markdown.
+
 sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
   --from markdown-markdown_in_html_blocks \
   --include-in-header ~/.pandoc/tex-headers/set-font.tex \
@@ -17,6 +20,10 @@ sed 's/ {linenos=false}&nbsp;//g' "$1" | pandoc \
   --lua-filter ~/.pandoc/filters/lua-links.lua \
   --lua-filter ~/.pandoc/filters/lua-filter.lua \
   --lua-filter ~/.pandoc/filters/parse-html.lua \
+  --lua-filter ~/.pandoc/filters/set-secnum-depth.lua \
   --template eisvogel \
   --pdf-engine=xelatex \
+  --number-sections \
+  --toc \
+  --toc-depth=1 \
   -o "$2"
