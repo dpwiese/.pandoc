@@ -3,6 +3,7 @@ from: markdown-markdown_in_html_blocks
 filters:
   - lua-filter.lua
   - parse-html.lua
+  - highlight.lua
 template: eisvogel
 top-level-division: section
 toc: true
@@ -14,6 +15,7 @@ include-in-header:
   - link-color.tex
   - center-captions.tex
   - set-label-items.tex
+  - highlight.tex
 metadata-files:
   - /Users/dpwiese/.pandoc/defaults/metadata.yaml
 
