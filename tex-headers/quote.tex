@@ -1,0 +1,44 @@
+% Use this Latex header to change the style of a quote in markdown
+% defined with the > character.
+% To use this header in its current state, you must comment out the
+% \renewenvironment{quote} definition in eisvogel.latex and include
+% this tex header in defaults.yaml used by Pandoc.
+
+\definecolor{call-text-color}{RGB}{44,44,44}
+\definecolor{call-border-color}{RGB}{224,224,224}
+\definecolor{call-background-color}{RGB}{244,244,244}
+
+% \usepackage{framed}
+\usepackage{color}
+% \usepackage{quoting}
+\usepackage{mdframed}
+
+% \newfontfamily\bsixregular{B612 Regular}
+\newfontfamily\bsixregular{Atkinson Hyperlegible Regular}
+
+\newmdenv[
+  rightline=true,
+  bottomline=true,
+  topline=true,
+  linewidth=1pt,
+  linecolor=call-border-color,
+  skipabove=\parskip,
+  backgroundcolor=call-background-color
+]{callenv}
+
+% % To use this we need to use latex in markdown
+% % \begin{call}
+% % Here is my text in the call environment
+% % \end{call}
+% \newenvironment{call}{%
+%   \begin{callenv}\list{}{\rightmargin=0em\leftmargin=0em}%
+%     \item\relax\selectfont\bsixregular\color{call-text-color}\ignorespaces}{\unskip\unskip\endlist%
+%   \end{callenv}%
+% }
+
+% To use this need to comment out in eisvogel.latex
+\renewenvironment{quote}{%
+  \begin{callenv}\list{}{\rightmargin=0em\leftmargin=0em}%
+  \item\relax\selectfont\bsixregular\color{call-text-color}\ignorespaces}{\unskip\unskip\endlist%
+  \end{callenv}%
+}
