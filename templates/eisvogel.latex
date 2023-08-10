@@ -612,8 +612,14 @@ $endif$
 \renewenvironment{quote}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}%
 \item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
 
+% See /Library/Fonts
+\newfontfamily\mysectionfont{$sectionfont$}
+\newfontfamily\mysubsectionfont{$subsectionfont$}
+\newfontfamily\mysubsubsectionfont{$subsubsectionfont$}
+\newfontfamily\myparagraphfont{$paragraphfont$}
+
 %
-% Source Sans Pro as the de­fault font fam­ily
+% Source Sans Pro as the default font family
 % Source Code Pro for monospace text
 %
 % 'default' option sets the default
