@@ -612,12 +612,6 @@ $endif$
 \renewenvironment{quote}{\begin{customblockquote}\list{}{\rightmargin=0em\leftmargin=0em}%
 \item\relax\color{blockquote-text}\ignorespaces}{\unskip\unskip\endlist\end{customblockquote}}
 
-% See /Library/Fonts
-\newfontfamily\mysectionfont{$sectionfont$}
-\newfontfamily\mysubsectionfont{$subsectionfont$}
-\newfontfamily\mysubsubsectionfont{$subsubsectionfont$}
-\newfontfamily\myparagraphfont{$paragraphfont$}
-
 %
 % Source Sans Pro as the default font family
 % Source Code Pro for monospace text
@@ -657,6 +651,54 @@ $endif$
   \fi
   $endif$
 \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These variables are consumed by the tex-header more-headings.tex
+% See /Library/Fonts
+% TODO@dpwiese - make the fallback case not have the hardcoded default font everywhere
+$if(sectionfont)$
+\newfontfamily\mysectionfont{$sectionfont$}
+$else$
+$if(mainfont)$
+\newfontfamily{\mysectionfont}[BoldFont={* Display Bold}]{$mainfont$}
+$else$
+\newfontfamily{\mysectionfont}{Source Sans Pro}
+$endif$
+$endif$
+
+$if(subsectionfont)$
+\newfontfamily\mysubsectionfont{$subsectionfont$}
+$else$
+$if(mainfont)$
+\newfontfamily{\mysubsectionfont}[BoldFont={* Display Bold}]{$mainfont$}
+$else$
+\newfontfamily{\mysubsectionfont}{Source Sans Pro}
+$endif$
+$endif$
+
+$if(subsubsectionfont)$
+\newfontfamily\mysubsubsectionfont{$subsubsectionfont$}
+$else$
+$if(mainfont)$
+\newfontfamily{\mysubsubsectionfont}[BoldFont={* Display Bold}]{$mainfont$}
+$else$
+\newfontfamily{\mysubsubsectionfont}{Source Sans Pro}
+$endif$
+$endif$
+
+% TODO@dpwiese - I am not sure why this doesn't work as the ones above for section fonts
+$if(paragraphfont)$
+\newfontfamily\myparagraphfont{$paragraphfont$}
+$else$
+$if(mainfont)$
+\newfontfamily{\myparagraphfont}{$mainfont$ Display Bold Italic}
+$else$
+\newfontfamily{\myparagraphfont}{Source Sans Pro}
+$endif$
+$endif$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %
 % heading color
