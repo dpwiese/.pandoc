@@ -19,6 +19,12 @@ Read the [Pandoc docs](https://pandoc.org/MANUAL.html) to learn more about Pando
 The recommended method for calling Pandoc is via Make.
 The `./sample` directory contains an example document and makefile.
 
+Note that the makefile rules *do not* capture all of the dependencies of the output.
+For example the filters or tex headers.
+In the sample makefile provided, it does include `defaults.yaml` and `metadata.yaml` as prerequesites, but often, given this is not all of the dependencies, this might not make sense.
+
+If strict control over all of the inputs that may affect the compiled document is desired, it is probably best to include and track all dependencies along with the document source.
+
 ## Installing
 
 To get started, clone this repository into Pandoc's default user data directory, or anywhere else as specified with `--data-dir`.
