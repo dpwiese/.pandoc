@@ -1,28 +1,28 @@
-# Pandoc Data Files
-
-## Using
-
-Current usage:
-
-```
-~/.pandoc/md2pdf.sh sample.md sample.pdf
-```
+# Pandoc User Data Directory
 
 ## Introduction
+
+This repository contains my Pandoc user data directory.
+Cloning this into the user data directory in another environment will provide some basic TeX headers, filters, templates, and defaults that should make the generation of documents easier.
+My post here: [danielwiese.com/posts/documentation](https://danielwiese.com/posts/documentation/) describes how the contents of this repository are used to generate documentation.
 
 From the [docs](https://pandoc.org/MANUAL.html):
 
 > Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library.
 
-This repository contains the Pandoc data files which I've used to generate documentation.
-My post here: [danielwiese.com/posts/documentation](https://danielwiese.com/posts/documentation/) describes how the contents of this repository are used to generate documentation.
-The location of this repository can be specified with `--data-dir` and may default to: `$HOME/.pandoc`.
-
 The Pandoc data files that are included are [Citation Style Language](https://citationstyles.org/) or CSL files to format references, [Pandoc Filters](https://pandoc.org/filters.html), including [Lua Filters](https://pandoc.org/lua-filters.html), some themes and templates, and finally a small example that converts a Markdown file with inline LaTeX and references an entry from a `.bib` file.
 
 Read the [Pandoc docs](https://pandoc.org/MANUAL.html) to learn more about Pandoc.
 
+## Using
+
+The recommended method for calling Pandoc is via Make.
+The `./sample` directory contains an example document and makefile.
+
 ## Installing
+
+To get started, clone this repository into Pandoc's default user data directory, or anywhere else as specified with `--data-dir`.
+The default location of the user data directory can be determined by running `pandoc --version`.
 
 ### Fonts
 
