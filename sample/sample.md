@@ -11,36 +11,10 @@ lang: "en"
 
 Content here.
 Here is some `inline-code`.
-To run this example, configure and use:
+To run this example, navigate to the `./sample` directory and run Make with the following command.
 
 ```bash
-$ ~/.pandoc/md2pdf.sh sample.md sample.pdf
-```
-
-Or use the command below.
-
-```bash
-$ pandoc sample.md \
-    --from markdown \
-    --include-in-header ~/.pandoc/tex-headers/toc-safe-headings.tex \
-    --include-in-header ~/.pandoc/tex-headers/no-listings-code.tex \
-    --include-in-header ~/.pandoc/tex-headers/link-color.tex \
-    --filter pandoc-citeproc \
-    --bibliography=sample.bib \
-    --csl ieee.csl \
-    --template eisvogel \
-    -V mainfont="SFNS Display" \
-    -V monofont="Menlo Regular" \
-    -V sansfont="Helvetica" \
-    -V urlcolor=cyan \
-    -V fontsize=10pt \
-    -V geometry:letter \
-    -V geometry:margin=1in \
-    --number-sections \
-    --lua-filter ~/.pandoc/filters/lua-links.lua \
-    --pdf-engine=xelatex \
-    --toc \
-    -o sample.pdf
+make pdf
 ```
 
 ## Second Level Heading
@@ -66,6 +40,10 @@ For example, to set the font size:
 ```yaml
 fontsize: "10pt"
 ```
+
+#### Paragraph Level Heading
+
+Here is a paragraph.
 
 ## Hyperlinks
 
