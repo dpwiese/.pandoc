@@ -2,25 +2,20 @@
 
 \linespread{1.3}
 
-% See /Library/Fonts
-\newfontfamily\sfprodisplayregular{SF Pro Display Regular}
-\newfontfamily\sfprodisplayregularitalic{SF Pro Display Regular Italic}
-\newfontfamily\sfprodisplaybolditalic{SF Pro Display Bold Italic}
-
 % Set font of table of contents text
 \usepackage[titles]{tocloft}
 \renewcommand\cftsecfont{\normalfont}
 \renewcommand\cftsecpagefont{\normalfont}
 
-\sectionfont{\fontsize{16pt}{16pt}\selectfont\sfprodisplayregular}
-\subsectionfont{\fontsize{14pt}{14pt}\selectfont\sfprodisplayregular}
-\subsubsectionfont{\fontsize{12pt}{12pt}\selectfont\sfprodisplayregular}
-% \paragraphfont{\fontsize{10pt}{10pt}\selectfont\sfprodisplayregularitalic}
+\sectionfont{\fontsize{16pt}{16pt}\selectfont\mysectionfont}
+\subsectionfont{\fontsize{14pt}{14pt}\selectfont\mysubsectionfont}
+\subsubsectionfont{\fontsize{12pt}{12pt}\selectfont\mysubsubsectionfont}
+% \paragraphfont{\fontsize{10pt}{10pt}\selectfont\myparagraphfont}
 
 \makeatletter
 \renewcommand\paragraph{%
    \@startsection{paragraph}{4}{0mm}%
       {-\baselineskip}%
       {.5\baselineskip}%
-      {\fontsize{10pt}{10pt}\selectfont\sfprodisplaybolditalic}}
+      {\fontsize{10pt}{10pt}\selectfont\myparagraphfont}}
 \makeatother

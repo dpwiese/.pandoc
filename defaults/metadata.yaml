@@ -13,3 +13,10 @@ mainfontoptions:
   - BoldFont=* Display Bold
   - ItalicFont=* Display Regular Italic
   - BoldItalicFont=* Display Bold Italic
+mathfont: Latin Modern Math
+mathfontoptions:
+  - Scale=1.0
+sectionfont: SF Pro Display Bold
+subsectionfont: SF Pro Display Bold
+subsubsectionfont: SF Pro Display Bold
+paragraphfont: SF Pro Display Bold Italic
