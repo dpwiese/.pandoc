@@ -47,13 +47,9 @@ fc-list | grep "SF-Pro-Text-Regular"
 At the time of writing, the command `pandoc --version` produces the following output:
 
 ```
-pandoc 2.18
-Compiled with pandoc-types 1.22.2, texmath 0.12.5, skylighting 0.12.3,
-citeproc 0.7, ipynb 0.2, hslua 2.2.0
+pandoc 3.1.11.1
+Features: +server +lua
 Scripting engine: Lua 5.4
-User data directory: /Users/dpwiese/.pandoc
-Copyright (C) 2006-2022 John MacFarlane. Web:  https://pandoc.org
-This is free software; see the source for copying conditions. There is no
-warranty, not even for merchantability or fitness for a particular purpose.
 ```
 
+The (slightly modified) [Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template) LaTeX template version [2.4.2](https://github.com/Wandmalfarbe/pandoc-latex-template/releases/tag/2.4.2) is used.

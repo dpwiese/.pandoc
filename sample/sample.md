@@ -50,6 +50,60 @@ Here is a paragraph.
 Here is a markdown hyperlink: [Pandoc](https://pandoc.org/).
 Here is an HTML hyperlink: <a href="https://pandoc.org/" target="_blank">Pandoc</a>.
 
+# Figures and Images
+
+## Figures
+
+Figures can be included, centered, and caption with either Markdown or HTML.
+
+![Sample image caption in Markdown](./sample.png){width=200}
+
+<figure>
+  <img src="./sample.png" width="200"/>
+  <figcaption>
+    <i>Sample image caption in HTML, italicized</i>
+  </figcaption>
+</figure>
+
+## Images
+
+Centering an *image*, that is without a caption that would be associated with a figure, seems not so straightforward.
+The easiest solution, if the behavior should be *only centered images in the entire document* seems to be to define all images as figures with a non-printing character for the caption, and use the following LaTeX (e.g. via `include-in-header`) to not display the figure label at all.
+
+```latex
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
+```
+
+The Figure can be defined with
+
+```markdown
+![\ ](./sample.png){width=200}
+```
+
+Alternatively, to center only specific images within a document, the following can be used in the Markdown
+
+```markdown
+\centering
+![](./sample.png){width=200}
+\raggedright
+```
+
+which produces
+
+\centering
+
+![](./sample.png){width=200}
+
+\raggedright
+\flushleft
+
+Pure LaTeX also works, e.g.
+
+\begin{center}
+\includegraphics[width=0.32\textwidth]{./sample.png}
+\end{center}
+
 # Quotes and a Reference
 
 Below is a quote with a reference [@anderson.aerodynamics.2010].

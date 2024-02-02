@@ -2,9 +2,12 @@
 .EXPORT_ALL_VARIABLES:
 include .env
 
+# Bibliography and CSL file
+BIB_FILE=sample.bib
+CSL_FILE=../csl/ieee-with-url.csl
+
 # External directories
 PANDOC_OPTIONS=--from markdown
-RM=/bin/rm -f
 
 DEFAULTS_ABSPATH=$(realpath $(dir $(DEFAULTS)))/$(notdir $(DEFAULTS))
 METADATA_ABSPATH=$(realpath $(dir $(METADATA_FILE)))/$(notdir $(METADATA_FILE))
@@ -15,12 +18,12 @@ METADATA_ABSPATH=$(realpath $(dir $(METADATA_FILE)))/$(notdir $(METADATA_FILE))
 pdf: sample.pdf
 
 sample.pdf: sample.md $(DEFAULTS_ABSPATH) $(METADATA_ABSPATH)
-	@$(PANDOC) $(PANDOC_OPTIONS) --defaults $(DEFAULTS) --resource-path $(RESOURCE_PATH) --metadata-file $(METADATA_FILE) $< -o $@
+	$(PANDOC) $(PANDOC_OPTIONS) --bibliography $(BIB_FILE) --citeproc --csl $(CSL_FILE) --defaults $(DEFAULTS) --resource-path $(RESOURCE_PATH) --metadata-file $(METADATA_FILE) $< -o $@
 
 tex: sample.tex
 
 sample.tex: sample.md $(DEFAULTS_ABSPATH) $(METADATA_ABSPATH)
-	@$(PANDOC) $(PANDOC_OPTIONS) --defaults $(DEFAULTS) --resource-path $(RESOURCE_PATH) --metadata-file $(METADATA_FILE) $< -o $@
+	$(PANDOC) $(PANDOC_OPTIONS) --bibliography $(BIB_FILE) --citeproc --csl $(CSL_FILE) --defaults $(DEFAULTS) --resource-path $(RESOURCE_PATH) --metadata-file $(METADATA_FILE) $< -o $@
 
 clean:
-	- $(RM) sample.pdf
+	- rm -f sample.pdf
