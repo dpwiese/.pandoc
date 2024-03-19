@@ -6,10 +6,6 @@ if FORMAT ~= "latex" then
   return
 end
 
-local function latex(str)
-  return pandoc.RawInline('latex', str)
-end
-
 function figure_image (elem)
   local image = elem.content and elem.content[1]
   return (image.t == 'Image')
