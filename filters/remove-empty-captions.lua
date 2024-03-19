@@ -24,7 +24,7 @@ function Para (para)
   end
 
   return pandoc.Para {
-    pandoc.RawInline('latex', '\\begin{figure}\n\\centering\n'),
+    pandoc.RawInline('latex', '\\begin{figure}[H]\n\\centering\n'),
     img,
     pandoc.RawInline('latex', '\n\\end{figure}\n\n')
   }
