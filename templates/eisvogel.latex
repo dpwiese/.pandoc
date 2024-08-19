@@ -683,6 +683,16 @@ $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TODO@dpwiese - move this somewhere not in the template
 
+$if(draft)$
+% https://tex.stackexchange.com/a/724591
+\usepackage{tikz}
+\AddToHook{shipout/foreground}{
+  \begin{tikzpicture}[overlay, remember picture]
+    \node[opacity=0.2, text=gray, rotate=50, scale=20] at (current page) {DRAFT};
+  \end{tikzpicture}
+}
+$endif$
+
 % These variables are consumed by the tex-header more-headings.tex
 % See /Library/Fonts
 % TODO@dpwiese - make the fallback case not have the hardcoded default font everywhere
