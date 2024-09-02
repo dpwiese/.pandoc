@@ -1,0 +1,6 @@
+% The warnings below seem to be caused by sectsty, which is imported in  more-headings.tex.
+% This seems not to matter if section titles are not underlined.
+% https://tex.stackexchange.com/questions/310965/warning-command-underbar-has-changed
+\usepackage[immediate]{silence}
+\WarningFilter[temp]{latex}{Command \underbar has changed.}
+\WarningFilter[temp]{latex}{Command \underline has changed.}
