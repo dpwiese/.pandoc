@@ -6,6 +6,7 @@ filters:
   - lua-filter.lua
   - parse-html.lua
   - highlight.lua
+  - math-code-block.lua
 template: eisvogel
 top-level-division: section
 toc: true

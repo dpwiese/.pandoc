@@ -10,7 +10,7 @@ function CodeBlock(cb)
   local text = cb.text
 
   -- Already a LaTeX math environment: emit as raw LaTeX
-  if text:match('\\begins%s*{') then
+  if text:match('\\begin%s*{') then
     return pandoc.RawBlock('latex', text)
   end
 
