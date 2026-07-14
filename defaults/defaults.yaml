@@ -1,4 +1,6 @@
-pdf-engine: xelatex
+pdf-engine: latexmk
+pdf-engine-opts:
+  - "-xelatex"
 from: markdown-markdown_in_html_blocks
 filters:
   - lua-filter.lua
