@@ -68,7 +68,7 @@ function transclude (cb)
   end
 
   -- Markdown is used if this is nil.
-  local format = cb.attributes['format']
+  local format = cb.attributes['format'] or 'markdown-auto_identifiers'
 
   -- Attributes shift headings
   local shift_heading_level_by = 0
