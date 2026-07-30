@@ -5,3 +5,10 @@ function RawBlock (raw)
     and pandoc.read(raw.text, 'html').blocks
     or raw
 end
+
+function RawInline (raw)
+  return raw.format:match 'html'
+    and raw.text:match `^</?br%s*/?>$'
+    and pandoc.LineBreak()
+    or raw
+end
