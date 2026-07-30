@@ -8,7 +8,7 @@ end
 
 function RawInline (raw)
   return raw.format:match 'html'
-    and raw.text:match `^</?br%s*/?>$'
+    and raw.text:match '^</?br%s*/?>$'
     and pandoc.LineBreak()
     or raw
 end
